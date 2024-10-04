@@ -17,7 +17,6 @@ public class Index extends ActionSupport {
         return Action.SUCCESS;
     }
 
-
     public String getRedirectName() {
         return redirectName;
     }
