@@ -7,6 +7,8 @@ public class InvoiceBean {
     private String subject;
     private Date dateFrom;
     private Date dateTo;
+    private Float importeBruto;
+    private Float tipoIva;
 
     public Date getDateFrom() {
         return dateFrom;
@@ -30,5 +32,21 @@ public class InvoiceBean {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public Float getImporteBruto() {
+        return importeBruto;
+    }
+
+    public void setImporteBruto(Float importeBruto) {
+        this.importeBruto = importeBruto;
+    }
+
+    public Float getTipoIva() {
+        return tipoIva;
+    }
+
+    public void setTipoIva(Float tipoIva) {
+        this.tipoIva = tipoIva;
     }
 }

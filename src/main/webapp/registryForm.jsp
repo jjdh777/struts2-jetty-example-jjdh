@@ -34,8 +34,20 @@
        <s:text name="form.toDate.message"/>
        <sx:datetimepicker id="dateTo" name="invoiceBean.dateTo" />
     </td>
-
   </tr>
+  <tr>
+     <td class="evenRow">
+        <s:text name="form.importeBruto.message"/>
+        <s:textfield id="importeBruto" name="invoiceBean.importeBruto" value="0"/>
+     </td>
+   </tr>
+  <tr>
+     <td class="evenRow">
+        <s:text name="form.tipoIva.message"/>
+        <s:textfield id="tipoIva" name="invoiceBean.tipoIva" value="21"/>
+     </td>
+   </tr>
+
   <tr>
     <td class="evenRow">
         <s:submit align="left" value="Enviar"/>
