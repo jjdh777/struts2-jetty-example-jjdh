@@ -11,9 +11,11 @@ import org.apache.struts2.convention.annotation.Results;
 public class Index extends ActionSupport {
 
     private String redirectName;
+    private float total;
 
     public String execute() {
         redirectName = "registry";
+        total=100;
         return Action.SUCCESS;
     }
 

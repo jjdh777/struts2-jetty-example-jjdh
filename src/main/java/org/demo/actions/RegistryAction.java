@@ -6,6 +6,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * <code>Set welcome message.</code>
  */
 public class RegistryAction extends ActionSupport {
+    private float total;
 
     @Override
     public String execute() throws Exception {
@@ -51,4 +52,7 @@ public class RegistryAction extends ActionSupport {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
+
 }

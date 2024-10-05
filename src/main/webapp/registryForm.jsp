@@ -51,7 +51,6 @@
         <s:textfield id="tipoIva" name="invoiceBean.tipoIva" />
      </td>
    </tr>
-
   <tr>
     <td class="evenRow">
         <s:submit align="left" value="Enviar"/>

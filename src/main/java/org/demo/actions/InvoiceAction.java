@@ -11,6 +11,10 @@ public class InvoiceAction extends ActionSupport  {
     @Override
     public String execute() throws Exception {
         System.out.println("execute!!");
+        float importe = invoiceBean.getImporteBruto();
+        float iva = invoiceBean.getTipoIva();
+        float total = importe + (importe * iva / 100);
+        invoiceBean.setImporteTotal(total);
         return SUCCESS;
     }
 

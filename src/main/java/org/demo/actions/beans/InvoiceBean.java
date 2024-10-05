@@ -9,6 +9,7 @@ public class InvoiceBean {
     private Date dateTo;
     private Float importeBruto;
     private Float tipoIva;
+    private Float importeTotal;
 
     public Date getDateFrom() {
         return dateFrom;
@@ -49,6 +50,15 @@ public class InvoiceBean {
     public void setTipoIva(Float tipoIva) {
         this.tipoIva = tipoIva;
     }
+
+    public Float getImporteTotal() {
+        return importeTotal;
+    }
+
+    public void setImporteTotal(Float importeTotal) {
+        this.importeTotal = importeTotal;
+    }
+
     // Funciones de Validación
     public boolean isNullImporteBruto(){
         if (this.importeBruto==null) {
@@ -86,4 +96,6 @@ public class InvoiceBean {
             return false;
         }
     }
+
+
 }
