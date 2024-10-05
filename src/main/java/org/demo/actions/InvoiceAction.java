@@ -27,19 +27,19 @@ public class InvoiceAction extends ActionSupport  {
             addFieldError("invoiceBean.subject", "El concepto es obligatorio.");
         }
         // Comprobar que le importe bruto no es cero.
-        if (invoiceBean.getImporteBruto()== 0) {
-            addFieldError("invoiceBean.subject", "El importe Bruto no puede ser cero.");
+        if (invoiceBean.isNullImporteBruto()) {
+            addFieldError("invoiceBean.importeBruto", "El importe Bruto no puede ser cero.");
         }
         // Comprobar que el tipo de IVA no es cero, aunque podria ser una opcion valida
-        if (invoiceBean.getTipoIva()== 0) {
-            addFieldError("invoiceBean.subject", "El tipo del IVA no puede ser cero.");
+        if (invoiceBean.isNullTipoIva()) {
+            addFieldError("invoiceBean.tipoIva", "El tipo del IVA no puede ser cero.");
         }
         // Comprobar integridad de las fechas desde y hasta
-        if (invoiceBean.getDateFrom()==null){
-            addFieldError("invoiceBean.dateFrom", "Las fechas de inicio debe ser una fecha válida.");
+        if (invoiceBean.isNullDateFrom()){
+            addFieldError("invoiceBean.dateFrom", "Las fecha de inicio debe ser una fecha válida.");
         }
-        if (invoiceBean.getDateTo() == null){
-            addFieldError("invoiceBean.dateTo", "Las fechas de fin debe ser una fecha válida.");
+        if (invoiceBean.isNullDateTo()){
+            addFieldError("invoiceBean.dateTo", "Las fecha de fin debe ser una fecha válida.");
         }
 //        if (invoiceBean.getDateTo().after(invoiceBean.getDateFrom())) {
 //            addFieldError("invoiceBean.dateFrom", "La fecha de inicio debe ser anterior a la fecha de fin.");

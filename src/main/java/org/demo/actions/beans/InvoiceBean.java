@@ -49,4 +49,36 @@ public class InvoiceBean {
     public void setTipoIva(Float tipoIva) {
         this.tipoIva = tipoIva;
     }
+    // Funciones de Validación
+    public boolean isNullImporteBruto(){
+        if (this.importeBruto==null) {
+            return true;}
+        {
+            return false;
+        }
+    }
+    public boolean isNullTipoIva(){
+        if (this.tipoIva==null) {
+            return true;}
+        {
+            return false;
+        }
+    }
+    public boolean isNullDateTo(){
+        if (this.dateTo==null) {
+            return true;}
+        {
+            return false;
+        }
+    }
+    public boolean isNullDateFrom(){
+        if (this.dateFrom==null) {
+            return true;}
+        {
+            return false;
+        }
+    }
+
+
+
 }
