@@ -41,8 +41,8 @@ public class InvoiceAction extends ActionSupport  {
         if (invoiceBean.isNullDateTo()){
             addFieldError("invoiceBean.dateTo", "Las fecha de fin debe ser una fecha válida.");
         }
-//        if (invoiceBean.getDateTo().after(invoiceBean.getDateFrom())) {
-//            addFieldError("invoiceBean.dateFrom", "La fecha de inicio debe ser anterior a la fecha de fin.");
-//        }
+        if (invoiceBean.isNotCorrectDates()) {
+            addFieldError("invoiceBean.dateFrom", "La fecha de inicio debe ser anterior a la fecha de fin.");
+        }
     }
 }

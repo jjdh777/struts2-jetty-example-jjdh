@@ -79,6 +79,11 @@ public class InvoiceBean {
         }
     }
 
-
-
+    public boolean isNotCorrectDates() {
+        if (this.dateFrom.after(this.dateTo)) {
+            return true;}
+        {
+            return false;
+        }
+    }
 }
