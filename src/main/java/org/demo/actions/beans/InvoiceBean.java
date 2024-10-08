@@ -60,42 +60,52 @@ public class InvoiceBean {
     }
 
     // Funciones de Validación
-    public boolean isNullImporteBruto(){
-        if (this.importeBruto==null) {
-            return true;}
-        {
-            return false;
+    public boolean isNullImporteBruto() {
+        if (this.importeBruto == null) {
+            return true;
         }
-    }
-    public boolean isNullTipoIva(){
-        if (this.tipoIva==null) {
-            return true;}
-        {
-            return false;
-        }
-    }
-    public boolean isNullDateTo(){
-        if (this.dateTo==null) {
-            return true;}
-        {
-            return false;
-        }
-    }
-    public boolean isNullDateFrom(){
-        if (this.dateFrom==null) {
-            return true;}
         {
             return false;
         }
     }
 
+    public boolean isNullTipoIva() {
+        if (this.tipoIva == null) {
+            return true;
+        }
+        {
+            return false;
+        }
+    }
+
+    public boolean isNullDateTo() {
+        if (this.dateTo == null) {
+            return true;
+        }
+        {
+            return false;
+        }
+    }
+
+    public boolean isNullDateFrom() {
+        if (this.dateFrom == null) {
+            return true;
+        }
+        {
+            return false;
+        }
+    }
+    // 2024.10.08 Mejora del condicional para antes comprobar que las fechas no son nulas.
     public boolean isNotCorrectDates() {
-        if (this.dateFrom.after(this.dateTo)) {
-            return true;}
-        {
+        if (!(this.dateFrom == null) && !(this.dateTo == null)) {
+            if (this.dateFrom.after(this.dateTo)) {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }else {
             return false;
         }
     }
-
-
 }

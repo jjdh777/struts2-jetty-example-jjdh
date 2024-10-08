@@ -40,13 +40,20 @@ public class InvoiceAction extends ActionSupport  {
         }
         // Comprobar integridad de las fechas desde y hasta
         if (invoiceBean.isNullDateFrom()){
-            addFieldError("invoiceBean.dateFrom", "Las fecha de inicio debe ser una fecha válida.");
+            addFieldError("invoiceBean.dateFrom", "Las fecha 'Desde' debe ser una fecha válida.");
         }
         if (invoiceBean.isNullDateTo()){
-            addFieldError("invoiceBean.dateTo", "Las fecha de fin debe ser una fecha válida.");
+            addFieldError("invoiceBean.dateTo", "Las fecha 'Hasta' debe ser una fecha válida.");
         }
-        if (invoiceBean.isNotCorrectDates()) {
-            addFieldError("invoiceBean.dateFrom", "La fecha de inicio debe ser anterior a la fecha de fin.");
+
+//        if (invoiceBean.isNotCorrectDates()){
+//            addFieldError("invoiceBean.dateFrom", "La fecha de inicio debe ser anterior a la fecha de fin.");
+//        }
+        //2024.10.08 Mejora de la comprobacion de fechas, ver si antes no son nulas
+        if (!invoiceBean.isNullDateTo() && !invoiceBean.isNullDateFrom()){
+            if (invoiceBean.isNotCorrectDates()){
+                addFieldError("invoiceBean.dateFrom", "La fecha 'Desde' debe ser anterior a la fecha 'Hasta'.");
+            }
         }
     }
 }
